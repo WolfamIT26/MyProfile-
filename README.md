@@ -106,4 +106,4 @@ A personal profile website that's straight-up fire. Loaded with style, interacti
 $ git clone https://github.com/WolfamIT26/my-profile
 $ cd my-profile
 
-# Open in Live Server or VS Code
+# Open in Live Server or VS Code# MyProfile-
