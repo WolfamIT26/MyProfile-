@@ -1,0 +1,361 @@
+/* Styling cho lớp phủ nền */
+.popup-overlay {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Nền đen trong suốt để tạo hiệu ứng mờ */
+    z-index: 999; /* Đảm bảo nằm dưới pop-up container */
+    opacity: 0; /* Ẩn mặc định */
+    transition: opacity 0.3s ease-out;
+}
+
+.popup-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Styling cho container của pop-up */
+.popup-container {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Đưa pop-up vào giữa màn hình */
+    background-color: var(--card-bg); /* Use theme background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Nằm trên lớp phủ */
+    max-width: 500px; /* Chiều rộng tối đa của pop-up */
+    width: 90%; /* Chiều rộng tương đối */
+    box-sizing: border-box; /* Bao gồm padding và border trong width */
+    opacity: 0; /* Ẩn mặc định */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.popup-container.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Styling cho nút đóng */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 30px; /* Tăng khoảng cách từ bên phải */
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Styling cho nội dung bên trong pop-up (thẻ profile) */
+.profile-card {
+    display: flex; /* Dùng flexbox để sắp xếp hình ảnh và thông tin */
+    flex-direction: column; /* Xếp chồng theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 20px; /* Khoảng cách giữa hình ảnh và thông tin */
+    justify-content: center; /* Căn giữa tổng thể */
+}
+
+.profile-image-container {
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px; /* Kích thước hình ảnh */
+    height: 150px;
+    border-radius: 50%; /* Hình tròn */
+    object-fit: cover;
+    border: 2px solid #eee; /* Viền nhẹ cho ảnh */
+}
+
+.profile-info {
+    display: flex; /* Dùng flexbox cho các mục con */
+    flex-direction: column; /* Xếp chồng các mục con theo chiều dọc */
+    align-items: center; /* Căn giữa các mục con theo chiều ngang */
+    text-align: center; /* Căn giữa nội dung văn bản */
+    margin-top: 15px; /* Thêm khoảng cách từ ảnh */
+    /* margin-right: 0; */ /* Xóa hoặc đặt lại nếu không cần thiết */
+}
+
+.profile-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #ffffff; /* Default color for h3, transparent for text handled by span */
+    display: flex; /* Make h3 a flex container */
+    align-items: center; /* Vertically align items in the center */
+    gap: 5px; /* Add space between name and icon */
+}
+
+.profile-info h3 .profile-name-text {
+    background-image: linear-gradient(90deg, #FF0080, #7928CA, #FF0080);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+
+.profile-info h3 .verified-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(23, 88, 240, 0.84);
+    border: 1px solid white;
+}
+
+.profile-info h3 .verified-icon i {
+    color: white;
+    font-size: 0.7em; /* Điều chỉnh kích thước để dấu tích nằm gọn */
+    line-height: 1;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+    display: flex; /* Dùng flexbox để các icon nằm ngang */
+    gap: 15px; /* Khoảng cách giữa các icon */
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff; /* Color for the icon */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: linear-gradient(45deg, #f06, #09f, #6f0, #f60, #0f6); /* Gradient for the border */
+    animation: spin 5s linear infinite;
+}
+
+/* This pseudo-element creates the solid colored inner circle */
+.social-icon::after {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: background 0.3s ease, background-image 0.3s ease; /* Thêm transition cho hover */
+}
+
+.social-icon.facebook::after {
+    background-color: #1877F2;
+}
+
+.social-icon.instagram::after {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-icon.tiktok::after {
+    background-color: #000000;
+}
+
+.social-icon.github::after {
+    background-color: #333;
+}
+
+.social-icon.zalo::after {
+    background-color: #008BFF;
+}
+
+/* Ensure the icon itself is on top of the ::after pseudo-element */
+.social-icon i {
+    position: relative;
+    z-index: 1;
+}
+
+.social-icon .zalo-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icon:hover::after {
+    background-image: linear-gradient(90deg, #FF0080, #7928CA, #FF0080); /* Rainbow gradient */
+    background-color: transparent; /* Đảm bảo màu đặc bị loại bỏ khi gradient được áp dụng */
+    background-size: 200% 200%;
+    animation: rainbow 2s ease infinite; /* Áp dụng animation cầu vồng */
+}
+
+/* The :hover on .social-icon itself only applies transform */
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+@keyframes spin {
+    0% { background-image: linear-gradient(0deg, #f06, #09f, #6f0, #f60, #0f6); }
+    100% { background-image: linear-gradient(360deg, #f06, #09f, #6f0, #f60, #0f6); }
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa hai nút */
+    margin-top: 15px;
+}
+
+.popup-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    color: #fff; /* Ensure text color is white */
+}
+
+.popup-buttons .btn::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    background-color: var(--primary-color); /* Default background color */
+    transition: background 0.3s ease, background-image 0.3s ease; /* Thêm transition cho hover */
+}
+
+.popup-buttons .btn.primary::after {
+    background-color: var(--primary-color); /* Default background for primary button */
+}
+
+.popup-buttons .btn.secondary::after {
+    background-color: var(--secondary-color); /* Default background for secondary button */
+}
+
+/* Ensure the text is on top */
+.popup-buttons .btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Định nghĩa keyframes cho hiệu ứng cầu vồng */
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.popup-buttons .btn.primary:hover::after,
+.popup-buttons .btn.secondary:hover::after {
+    background-image: linear-gradient(90deg, #FF0080, #7928CA, #FF0080); /* Rainbow gradient */
+    background-color: transparent; /* Đảm bảo màu đặc bị loại bỏ khi gradient được áp dụng */
+    background-size: 200% 200%;
+    animation: rainbow 2s ease infinite; /* Áp dụng animation cầu vồng */
+}
+
+/* Cập nhật lại các hiệu ứng hover cho nút chính */
+.popup-buttons .btn.primary:hover {
+    transform: translateY(-3px); /* Nâng nhẹ lên khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng nhẹ */
+    /* background-image và animation rainbow đã được chuyển sang ::after */
+}
+
+.popup-buttons .btn.secondary:hover {
+    transform: translateY(-3px); /* Nâng nhẹ lên khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng nhẹ */
+    /* background-image và animation rainbow đã được chuyển sang ::after */
+}
+
+.follow-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.follow-button:hover {
+    background-color: #0056b3;
+}
+
+.stats {
+    display: flex; /* Hiển thị theo chiều ngang */
+    justify-content: center; /* Căn giữa các mục */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    margin-top: 20px; /* Khoảng cách từ các nút */
+    color: #333; /* Màu chữ tổng thể */
+    gap: 20px; /* Khoảng cách giữa các khung thống kê */
+}
+
+.stats p {
+    margin: 0; /* Xóa margin mặc định của p */
+    font-size: 1em;
+    color: #333; /* Đảm bảo màu chữ giống icon */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa icon và số */
+    position: relative;
+    border: 1px solid #ccc; /* Thêm viền cho từng mục */
+    padding: 8px 12px; /* Thêm padding cho từng mục */
+    border-radius: 8px; /* Bo góc cho từng mục */
+}
+
+.stats p strong {
+    font-weight: normal; /* Đặt lại trọng lượng font cho số */
+}
+
+.stats p:not(:last-child)::after {
+    content: '|'; /* Dấu phân cách dọc */
+    position: absolute;
+    right: -15px; /* Điều chỉnh vị trí của dấu phân cách để nằm giữa các khung */
+    color: #777; /* Màu của dấu phân cách */
+    font-size: 1.2em;
+}
+
+.stats p i {
+    font-size: 1.2em; /* Điều chỉnh kích thước icon */
+    color: #333; /* Thay đổi màu icon thành xám đậm */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .profile-card {
+        flex-direction: column; /* Xếp chồng trên màn hình nhỏ */
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "E-commerce Platform",
+            "description": "Xây dựng nền tảng thương mại điện tử với đầy đủ tính năng thanh toán, quản lý đơn hàng và tích hợp AI cho gợi ý sản phẩm.",
+            "image": "assets/images/project1.jpg",
+            "category": "web",
+            "technologies": ["React", "Node.js", "MongoDB", "Stripe", "TensorFlow"],
+            "github": "https://github.com/yourusername/ecommerce-platform",
+            "demo": "https://ecommerce-demo.com",
+            "features": [
+                "Tích hợp thanh toán đa nền tảng",
+                "Hệ thống gợi ý sản phẩm AI",
+                "Quản lý đơn hàng realtime",
+                "Dashboard phân tích dữ liệu"
+            ]
+        },
+        {
+            "id": 2,
+            "title_key": "project_2_title",
+            "description_key": "project_2_description",
+            "detailed_description_key": "project_2_detailed_description",
+            "image": "assets/images/project2.jpg",
+            "category_key": "filter_mobile",
+            "technologies": ["React Native", "Firebase", "TensorFlow Lite", "Redux"],
+            "github": "https://github.com/yourusername/fitness-app",
+            "demo": "https://fitness-app-demo.com",
+            "features_keys": [
+                "project_2_feature_1",
+                "project_2_feature_2",
+                "project_2_feature_3",
+                "project_2_feature_4"
+            ],
+            "case_study_sections": [
+                {
+                    "section_title_key": "project_2_challenge_title",
+                    "section_content_key": "project_2_challenge_content"
+                },
+                {
+                    "section_title_key": "project_2_solution_title",
+                    "section_content_key": "project_2_solution_content"
+                },
+                {
+                    "section_title_key": "project_2_results_title",
+                    "section_content_key": "project_2_results_content"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Portfolio Design System",
+            "description": "Thiết kế và phát triển hệ thống design system cho portfolio với các component tái sử dụng và animation mượt mà.",
+            "image": "assets/images/project3.jpg",
+            "category": "design",
+            "technologies": ["Figma", "React", "Framer Motion", "Storybook"],
+            "github": "https://github.com/yourusername/portfolio-design",
+            "demo": "https://design-system-demo.com",
+            "features": [
+                "Component library đầy đủ",
+                "Animation system",
+                "Dark/Light mode",
+                "Responsive design"
+            ]
+        }
+    ],
+    "blog": [
+        {
+            "id": 1,
+            "title": "Những xu hướng Frontend mới nhất 2024",
+            "description": "Khám phá các công nghệ và framework đang làm mưa làm gió trong giới Frontend, từ AI-powered development đến WebAssembly.",
+            "image": "assets/images/blog1.jpg",
+            "date": "2024-03-15",
+            "category": "Technology",
+            "tags": ["Frontend", "Web Development", "AI"],
+            "content": "Năm 2024 chứng kiến sự phát triển mạnh mẽ của các công nghệ Frontend...",
+            "readTime": "5 phút"
+        },
+        {
+            "id": 2,
+            "title": "Tối ưu Performance cho Web App",
+            "description": "Các kỹ thuật và best practices để cải thiện tốc độ tải trang và trải nghiệm người dùng.",
+            "image": "assets/images/blog2.jpg",
+            "date": "2024-03-10",
+            "category": "Performance",
+            "tags": ["Performance", "Web Optimization", "User Experience"],
+            "content": "Performance là yếu tố quan trọng quyết định sự thành công của một web app...",
+            "readTime": "7 phút"
+        },
+        {
+            "id": 3,
+            "title": "Xây dựng Design System từ A đến Z",
+            "description": "Hướng dẫn chi tiết về cách xây dựng và triển khai design system cho dự án của bạn.",
+            "image": "assets/images/blog3.jpg",
+            "date": "2024-03-05",
+            "category": "Design",
+            "tags": ["Design System", "UI/UX", "Frontend"],
+            "content": "Design System là nền tảng quan trọng để xây dựng sản phẩm nhất quán...",
+            "readTime": "10 phút"
+        }
+    ],
+    "about": {
+        "introduction": "Tôi là một Frontend Developer với hơn 3 năm kinh nghiệm trong việc xây dựng các ứng dụng web hiện đại. Tôi đam mê tạo ra những trải nghiệm người dùng tuyệt vời và luôn tìm hiểu các công nghệ mới.",
+        "skills": {
+            "frontend": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "TypeScript"],
+            "backend": ["Node.js", "Express", "MongoDB", "Firebase"],
+            "tools": ["Git", "Webpack", "Docker", "Figma", "Adobe XD"],
+            "soft": ["Team Leadership", "Problem Solving", "Communication", "Agile"]
+        },
+        "experience": [
+            {
+                "year": "2023",
+                "title": "Tech Lead",
+                "company": "Tech Solutions Inc.",
+                "description": "Dẫn dắt team 5 người phát triển các dự án web lớn, tối ưu workflow và mentoring junior developers."
+            },
+            {
+                "year": "2022",
+                "title": "Senior Frontend Developer",
+                "company": "Digital Innovations",
+                "description": "Phát triển các ứng dụng React phức tạp, tích hợp AI và tối ưu performance."
+            },
+            {
+                "year": "2021",
+                "title": "Frontend Developer",
+                "company": "Web Solutions",
+                "description": "Xây dựng giao diện người dùng và tích hợp API cho các dự án e-commerce."
+            }
+        ],
+        "education": [
+            {
+                "year": "2020",
+                "degree": "Cử nhân Công nghệ Thông tin",
+                "school": "Đại học Bách Khoa Hà Nội",
+                "description": "Chuyên ngành Công nghệ Phần mềm"
+            }
+        ]
+    }
+} 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact_page_title"></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">PHĐV</a>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home"></a>
+                <a href="about.html" data-i18n="nav_about"></a>
+                <a href="projects.html" data-i18n="nav_projects"></a>
+                <a href="blog.html" data-i18n="nav_blog"></a>
+                <a href="contact.html" class="active" data-i18n="nav_contact"></a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="lang-switcher">VI</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h1 data-i18n="contact_title"></h1>
+        
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info-card">
+                <h2 data-i18n="contact_info_title"></h2>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3 data-i18n="email_label"></h3>
+                        <p>pducviet.2020@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3 data-i18n="phone_label"></h3>
+                        <p>+84 866 066 042</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3 data-i18n="location_label"></h3>
+                        <p data-i18n="contact_address"></p>
+                    </div>
+                </div>
+                
+                <div class="social-links-contact">
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <h2 data-i18n="send_message_title"></h2>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-i18n="name_label"></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" data-i18n="email_label_form"></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" data-i18n="subject_label"></label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-i18n="message_label"></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" data-i18n="send_button"></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p data-i18n="copyright"></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/lang-switcher.js"></script>
+    <script src="assets/js/features.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert(translationsCache[document.documentElement.lang]['contact_form_success_message']);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html> 

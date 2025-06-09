@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="home_page_title">Phạm Huy Đức Việt - Portfolio</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/images/avatar.jpg" as="image">
+    <link rel="preload" href="assets/js/content.js" as="script">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/popup-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" data-i18n="home_meta_description" content="Portfolio của Phạm Huy Đức Việt - Frontend Developer & UI/UX Enthusiast">
+    <meta name="keywords" data-i18n="home_meta_keywords" content="Frontend Developer, UI/UX, Web Development, Portfolio">
+    <meta name="author" content="Phạm Huy Đức Việt">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" data-i18n="home_og_title" content="Phạm Huy Đức Việt - Portfolio">
+    <meta property="og:description" data-i18n="home_og_description" content="Portfolio của Phạm Huy Đức Việt - Frontend Developer & UI/UX Enthusiast">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com">
+    
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="assets/images/icon-192x192.png">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">PHĐV</a>
+            <div class="nav-links">
+                <a href="index.html" class="active" data-i18n="nav_home">Trang chủ</a>
+                <a href="about.html" data-i18n="nav_about">Giới thiệu</a>
+                <a href="projects.html" data-i18n="nav_projects">Dự án</a>
+                <a href="blog.html" data-i18n="nav_blog">Blog</a>
+                <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Chuyển đổi giao diện">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="lang-switcher">VI</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-i18n="full_name">Phạm Huy Đức Việt</h1>
+                <p class="subtitle" data-i18n="home_hero_subtitle">Frontend Developer & UI/UX Enthusiast</p>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn primary" data-i18n="home_view_projects">Xem dự án</a>
+                    <a href="contact.html" class="btn secondary" data-i18n="home_contact_me">Liên hệ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <h2 data-i18n="home_featured_projects">Dự án nổi bật</h2>
+            <div class="projects-grid">
+                <!-- Projects will be loaded from content.js -->
+            </div>
+            <div class="section-footer">
+                <a href="projects.html" class="btn secondary" data-i18n="home_view_all_projects">Xem tất cả dự án</a>
+            </div>
+        </section>
+
+        <section class="latest-blog">
+            <h2 data-i18n="home_latest_blog">Blog mới nhất</h2>
+            <div class="blog-grid">
+                <!-- Blog posts will be loaded from content.js -->
+            </div>
+            <div class="section-footer">
+                <a href="blog.html" class="btn secondary" data-i18n="home_view_all_posts">Xem tất cả bài viết</a>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2 data-i18n="home_skills_title">Kỹ năng</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 data-i18n="skill_category_frontend">Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Vue.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-i18n="skill_category_backend">Backend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-i18n="skill_category_tools">Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Webpack</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p data-i18n="copyright">&copy; 2024 Phạm Huy Đức Việt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" aria-label="Lên đầu trang">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Popup Profile Card -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+
+    <div class="popup-container" id="myPopup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+
+            <div class="profile-card">
+                <div class="profile-image-container">
+                    <img src="assets/images/avatar.jpg" alt="Phạm Huy Đức Việt" class="profile-image">
+                </div>
+                <div class="profile-info">
+                    <h3><span class="profile-name-text" data-i18n="profile_name">Phạm Huy Đức Việt</span> <span class="verified-icon"><i class="fa-solid fa-check"></i></span></h3>
+                    <p data-i18n="profile_developer_text">Tôi Là Một Developer</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/DucVietIT55" class="social-icon facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/wolfam2605" class="social-icon instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@vit.phm131" class="social-icon tiktok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://github.com/WolfamIT26" class="social-icon github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://zalo.me/0866066042" class="social-icon zalo" target="_blank" rel="noopener noreferrer"><img src="assets/images/zalo-icon.png" alt="Zalo" class="zalo-icon"></a>
+                    </div>
+                    <div class="popup-buttons">
+                        <button class="btn primary" id="messageButton"><span data-i18n="profile_message_button">Nhắn Tin</span></button>
+                        <button class="btn secondary" id="followButton"><span data-i18n="profile_follow_button">Theo Dõi</span></button>
+                    </div>
+                    <div class="stats">
+                        <p><i class="fas fa-heart"></i> <strong data-i18n="likes_count">45.5K</strong></p>
+                        <p><i class="fas fa-comment"></i> <strong data-i18n="comments_count">15.7K</strong></p>
+                        <p><i class="fas fa-share"></i> <strong data-i18n="shares_count">26.2K</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/features.js" defer></script>
+    <script src="assets/js/popup-profile.js" defer></script>
+    <script src="assets/js/theme-toggle.js" defer></script>
+    <script src="assets/js/lang-switcher.js" defer></script>
+    
+    <!-- Service Worker Registration (Tạm thời vô hiệu hóa để khắc phục lỗi cache) -->
+    <!--
+    <script>
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', () => {
+        //         navigator.serviceWorker.register('/sw.js')
+        //             .then(registration => {
+        //                 console.log('ServiceWorker registration successful');
+        //             })
+        //             .catch(err => {
+        //                 console.log('ServiceWorker registration failed: ', err);
+        //             });
+        //     });
+        // }
+    </script>
+    -->
+</body>
+</html> 

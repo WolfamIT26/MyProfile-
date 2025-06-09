@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="blog_page_title">Blog - Phạm Huy Đức Việt</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="assets/images/icon-192x192.png">
+    <meta name="description" data-i18n="blog_meta_description" content="Blog của Phạm Huy Đức Việt - Chia sẻ kiến thức về Frontend Development, UI/UX và công nghệ web">
+    <meta name="keywords" data-i18n="blog_meta_keywords" content="Frontend Development, UI/UX, Web Technology, Blog">
+    <meta name="author" content="Phạm Huy Đức Việt">
+    <meta property="og:title" data-i18n="blog_og_title" content="Blog - Phạm Huy Đức Việt">
+    <meta property="og:description" data-i18n="blog_og_description" content="Blog của Phạm Huy Đức Việt - Chia sẻ kiến thức về Frontend Development, UI/UX và công nghệ web">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com/blog">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/js/content.js" as="script">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">PHĐV</a>
+            <div class="nav-links">
+                <a href="/" data-i18n="nav_home">Trang chủ</a>
+                <a href="/about.html" data-i18n="nav_about">Giới thiệu</a>
+                <a href="/projects.html" data-i18n="nav_projects">Dự án</a>
+                <a href="/blog.html" class="active" data-i18n="nav_blog">Blog</a>
+                <a href="/contact.html" data-i18n="nav_contact">Liên hệ</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Chuyển đổi giao diện">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="lang-switcher">VI</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-header">
+            <h1 data-i18n="blog_hero_title">Blog</h1>
+            <p class="subtitle" data-i18n="blog_hero_subtitle">Chia sẻ kiến thức về Frontend Development, UI/UX và công nghệ web</p>
+        </section>
+
+        <section class="blog-filters">
+            <div class="search-box">
+                <input type="text" id="blog-search" placeholder="Tìm kiếm bài viết..." data-i18n-placeholder="blog_search_placeholder">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-category="all" data-i18n="filter_all">Tất cả</button>
+                <button class="filter-tag" data-category="Technology" data-i18n="filter_technology">Technology</button>
+                <button class="filter-tag" data-category="Performance" data-i18n="filter_performance">Performance</button>
+                <button class="filter-tag" data-category="Design" data-i18n="filter_design">Design</button>
+            </div>
+        </section>
+
+        <section class="blog-grid">
+            <!-- Blog posts will be loaded from content.js -->
+        </section>
+
+        <div class="pagination">
+            <button class="pagination-btn" id="prev-page" disabled data-i18n="prev_page">
+                <i class="fas fa-chevron-left"></i> Trang trước
+            </button>
+            <span class="page-info" data-i18n="page_info">Trang <span id="current-page">1</span> / <span id="total-pages">1</span></span>
+            <button class="pagination-btn" id="next-page" data-i18n="next_page">
+                Trang sau <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p data-i18n="copyright">&copy; 2024 Phạm Huy Đức Việt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" aria-label="Lên đầu trang">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/lang-switcher.js"></script>
+    <script src="assets/js/features.js"></script>
+    <script>
+        // Blog search and filter functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('blog-search');
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const blogGrid = document.querySelector('.blog-grid');
+            let currentPage = 1;
+            const postsPerPage = 6;
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                filterPosts(searchTerm, getActiveCategory());
+            });
+
+            // Filter functionality
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                    filterPosts(searchInput.value.toLowerCase(), tag.dataset.category);
+                });
+            });
+
+            function getActiveCategory() {
+                const activeTag = document.querySelector('.filter-tag.active');
+                return activeTag ? activeTag.dataset.category : 'all';
+            }
+
+            function filterPosts(searchTerm, category) {
+                const posts = document.querySelectorAll('.blog-card');
+                let visibleCount = 0;
+
+                posts.forEach(post => {
+                    const title = post.querySelector('h3').textContent.toLowerCase();
+                    const content = post.querySelector('p').textContent.toLowerCase();
+                    const postCategory = post.dataset.category;
+
+                    const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
+                    const matchesCategory = category === 'all' || postCategory === category;
+
+                    if (matchesSearch && matchesCategory) {
+                        post.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+
+                updatePagination(visibleCount);
+            }
+
+            function updatePagination(visibleCount) {
+                const totalPages = Math.ceil(visibleCount / postsPerPage);
+                document.getElementById('total-pages').textContent = totalPages;
+                document.getElementById('current-page').textContent = currentPage;
+                document.getElementById('prev-page').disabled = currentPage === 1;
+                document.getElementById('next-page').disabled = currentPage === totalPages;
+            }
+
+            // Pagination
+            document.getElementById('prev-page').addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePagination(document.querySelectorAll('.blog-card:not([style*="display: none"])').length);
+                }
+            });
+
+            document.getElementById('next-page').addEventListener('click', () => {
+                const totalPages = parseInt(document.getElementById('total-pages').textContent);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePagination(document.querySelectorAll('.blog-card:not([style*="display: none"])').length);
+                }
+            });
+        });
+    </script>
+    <script src="assets/js/content.js"></script>
+</body>
+</html> 

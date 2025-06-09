@@ -1,66 +1,109 @@
-# Personal Profile Website
+my-profile/
+├── index.html                👉 Trang chính
+├── blog.html                 👉 Trang blog cá nhân
+├── projects.html             👉 Dự án cá nhân
+├── contact.html              👉 Liên hệ
+├── favicon.ico               👉 Icon trang web
+├── manifest.json             👉 Cấu hình PWA
+├── sw.js                     👉 Service Worker (PWA)
+│
+├── assets/
+│   ├── css/
+│   │   ├── popup-profile.css 👉 CSS cho popup profile
+│   │   └── style.css         👉 Giao diện chung (sáng + tối)
+│   │
+│   ├── js/
+│   │   ├── content.js        👉 Xử lý nội dung động
+│   │   ├── easter-egg.js     👉 Script hiệu ứng Easter Egg
+│   │   ├── features.js       👉 Các tính năng bổ sung
+│   │   ├── lang-switcher.js  👉 Xử lý chuyển đổi ngôn ngữ
+│   │   ├── main.js           👉 Script chính
+│   │   ├── popup-profile.js  👉 Xử lý logic popup profile
+│   │   ├── profile-modal.js  👉 Xử lý dữ liệu modal
+│   │   └── theme-toggle.js   👉 Xử lý chuyển đổi chế độ sáng/tối
+│   │
+│   └── images/
+│       ├── avatar.jpg        👉 Ảnh đại diện
+│       ├── icon-192x192.png   👉 Icon PWA
+│       └── zalo-icon.png     👉 Icon Zalo
+│
+├── lang/                     👉 Thư mục chứa các file ngôn ngữ
+│   ├── en.json               👉 Nội dung tiếng Anh
+│   └── vi.json               👉 Nội dung tiếng Việt
+│
+└── data/                     👉 Thư mục chứa dữ liệu tĩnh
+    └── content.json          👉 Dữ liệu chính của trang
+------------------------------------------------------------------------------------
 
-A modern, responsive personal profile website built with Next.js, TypeScript, and Tailwind CSS.
+README.md
+=========
 
-## Features
+# 👨‍💻 My Profile - Phạm Huy Đức Việt
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive
-- ⚡ Fast and optimized performance
-- 🎭 Smooth animations with Framer Motion
-- 🎯 SEO friendly
-- 🔍 Easy to customize and extend
+Một trang web hồ sơ cá nhân đầy mê lực. Cực ngầu, cực tương tác, cực nhiều tính năng hiện đại như:
 
-## Tech Stack
+## 💡 Tính năng nổi bật
+- 🌗 Dark/Light Mode Toggle
+- 🌐 Language Switcher (EN/VI) – Chuyển đổi ngôn ngữ mượt mà và đầy đủ
+- 🥚 Easter Egg (Click avatar nhiều lần có điều kỳ diệu xảy ra...)
+- 🎉 Typing Effect giới thiệu bản thân
+- 💬 Interactive Profile Popup – Thông tin cá nhân nổi bật, có thể tương tác
+- 📃 Tải CV bản đẹp PDF
+- 🕰️ Timeline hành trình học tập/làm việc
+- 📊 Skill Bar animation
+- 📱 Responsive mọi thiết bị
+- 🧩 Hidden Mini Game: "Anh Năm Né Deadline"
+- 📦 PWA Support (cài như app luôn)
+- 💬 Góc tâm sự/blog cá nhân
 
-- [Next.js](https://nextjs.org/) - React framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [Framer Motion](https://www.framer.com/motion/) - Animations
-- [React Icons](https://react-icons.github.io/react-icons/) - Icons
+## 📁 Cấu trúc thư mục
+(đã trình bày chi tiết bên trên)
 
-## Getting Started
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/personal-profile.git
-   ```
+## 🚀 Cách chạy dự án
+```bash
+# Clone repo này
+$ git clone https://github.com/WolfamIT26/my-profile
+$ cd my-profile
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Mở bằng live server hoặc VS Code
+```
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+---
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 🔥 Người tạo
+**Phạm Huy Đức Việt**
+> Developer with passion for front-end, animation, and GenZ vibes.
+---
+------------------------------------------------------------------------------------
+# 👨‍💻 My Profile - Phạm Huy Đức Việt
 
-## Customization
+A personal profile website that's straight-up fire. Loaded with style, interactivity, and modern features like:
 
-1. Update personal information in the components:
-   - `src/components/Hero.tsx`
-   - `src/components/About.tsx`
-   - `src/components/Skills.tsx`
-   - `src/components/Projects.tsx`
-   - `src/components/Contact.tsx`
+## 💡 Key Features
+- 🌗 Dark/Light Mode Toggle – aesthetic switcher for any mood
+- 🌐 Language Switcher (EN/VI) – Seamless and comprehensive bilingual support
+- 🥚 Easter Egg – click the avatar a few times and... something wild happens 👀
+- 🎉 Typing Effect – intro that types itself (yeah, like magic)
+- 💬 Interactive Profile Popup – Dynamic and engaging personal info display
+- 📃 Downloadable CV – beautifully designed PDF version
+- 🕰️ Timeline – track my journey through study & work
+- 📊 Animated Skill Bars – watch the skills glow up
+- 📱 Fully Responsive – smooth on any device
+- 🧩 Hidden Mini Game: "Anh Năm Dodge Deadline" 🏃‍♂️💨
+- 📦 PWA Ready – install it like a real app
+- 💬 Blog Corner – personal thoughts, life updates & tech rants
 
-2. Modify the theme colors in `tailwind.config.js`
+## 📁 Folder Structure
+(already detailed up above – scroll a lil' 👆)
 
-3. Add your own images to the `public` directory
+---
 
-## Deployment
+## 🚀 How to Run This Project
+```bash
+# Clone this cool-ass repo
+$ git clone https://github.com/WolfamIT26/my-profile
+$ cd my-profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
-
-## License
-
-MIT License - feel free to use this template for your personal website!
-
-## Contact
-
-Your Name - [@yourusername](https://twitter.com/yourusername)
-
-Project Link: [https://github.com/yourusername/personal-profile](https://github.com/yourusername/personal-profile) 
+# Open in Live Server or VS Code

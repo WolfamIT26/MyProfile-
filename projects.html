@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="projects_page_title">Dự án - Phạm Huy Đức Việt</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="assets/images/icon-192x192.png">
+    <meta name="description" data-i18n="projects_meta_description" content="Các dự án nổi bật của Phạm Huy Đức Việt - Frontend Developer & UI/UX Enthusiast.">
+    <meta name="keywords" data-i18n="projects_meta_keywords" content="Frontend Developer, UI/UX, Web Development, Portfolio Projects">
+    <meta name="author" content="Phạm Huy Đức Việt">
+    <meta property="og:title" data-i18n="projects_og_title" content="Dự án - Phạm Huy Đức Việt">
+    <meta property="og:description" data-i18n="projects_og_description" content="Các dự án nổi bật của Phạm Huy Đức Việt - Frontend Developer & UI/UX Enthusiast.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com/projects.html">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/js/content.js" as="script">
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">PHĐV</a>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Trang chủ</a>
+                <a href="about.html" data-i18n="nav_about">Giới thiệu</a>
+                <a href="projects.html" class="active" data-i18n="nav_projects">Dự án</a>
+                <a href="blog.html" data-i18n="nav_blog">Blog</a>
+                <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Chuyển đổi giao diện">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="lang-switcher">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-i18n="projects_hero_title">Dự án của tôi</h1>
+                <p class="subtitle" data-i18n="projects_hero_subtitle">Khám phá các dự án nổi bật mà tôi đã thực hiện</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tất cả</button>
+                <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web</button>
+                <button class="filter-btn" data-filter="mobile" data-i18n="filter_mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design" data-i18n="filter_design">Design</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Projects will be loaded from content.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p data-i18n="copyright">&copy; 2024 Phạm Huy Đức Việt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" aria-label="Lên đầu trang">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/features.js" defer></script>
+    <script src="assets/js/theme-toggle.js" defer></script>
+    <script src="assets/js/lang-switcher.js" defer></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.dataset.filter;
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 
