@@ -1,38 +1,33 @@
 my-profile/
-├── index.html                👉 Trang chính
-├── blog.html                 👉 Trang blog cá nhân
-├── projects.html             👉 Dự án cá nhân
-├── contact.html              👉 Liên hệ
-├── favicon.ico               👉 Icon trang web
-├── manifest.json             👉 Cấu hình PWA
-├── sw.js                     👉 Service Worker (PWA)
-│
-├── assets/
-│   ├── css/
-│   │   ├── popup-profile.css 👉 CSS cho popup profile
-│   │   └── style.css         👉 Giao diện chung (sáng + tối)
-│   │
-│   ├── js/
-│   │   ├── content.js        👉 Xử lý nội dung động
-│   │   ├── easter-egg.js     👉 Script hiệu ứng Easter Egg
-│   │   ├── features.js       👉 Các tính năng bổ sung
-│   │   ├── lang-switcher.js  👉 Xử lý chuyển đổi ngôn ngữ
-│   │   ├── main.js           👉 Script chính
-│   │   ├── popup-profile.js  👉 Xử lý logic popup profile
-│   │   ├── profile-modal.js  👉 Xử lý dữ liệu modal
-│   │   └── theme-toggle.js   👉 Xử lý chuyển đổi chế độ sáng/tối
-│   │
-│   └── images/
-│       ├── avatar.jpg        👉 Ảnh đại diện
-│       ├── icon-192x192.png   👉 Icon PWA
-│       └── zalo-icon.png     👉 Icon Zalo
-│
-├── lang/                     👉 Thư mục chứa các file ngôn ngữ
-│   ├── en.json               👉 Nội dung tiếng Anh
-│   └── vi.json               👉 Nội dung tiếng Việt
-│
-└── data/                     👉 Thư mục chứa dữ liệu tĩnh
-    └── content.json          👉 Dữ liệu chính của trang
+- index.html                👉 Trang chính
+- blog.html                 👉 Trang blog cá nhân
+- projects.html             👉 Dự án cá nhân
+- contact.html              👉 Liên hệ
+- favicon.ico               👉 Icon trang web
+- manifest.json             👉 Cấu hình PWA
+- sw.js                     👉 Service Worker (PWA)
+- assets/
+  - css/
+    - popup-profile.css     👉 CSS cho popup profile
+    - style.css             👉 Giao diện chung (sáng + tối)
+  - js/
+    - content.js            👉 Xử lý nội dung động
+    - easter-egg.js         👉 Script hiệu ứng Easter Egg
+    - features.js           👉 Các tính năng bổ sung
+    - lang-switcher.js      👉 Xử lý chuyển đổi ngôn ngữ
+    - main.js               👉 Script chính
+    - popup-profile.js      👉 Xử lý logic popup profile
+    - profile-modal.js      👉 Xử lý dữ liệu modal
+    - theme-toggle.js       👉 Xử lý chuyển đổi chế độ sáng/tối
+  - images/
+    - avatar.jpg            👉 Ảnh đại diện
+    - icon-192x192.png       👉 Icon PWA
+    - zalo-icon.png         👉 Icon Zalo
+- lang/
+  - en.json                 👉 Nội dung tiếng Anh
+  - vi.json                 👉 Nội dung tiếng Việt
+- data/
+  - content.json            👉 Dữ liệu chính của trang
 ------------------------------------------------------------------------------------
 
 README.md
@@ -106,4 +101,4 @@ A personal profile website that's straight-up fire. Loaded with style, interacti
 $ git clone https://github.com/WolfamIT26/my-profile
 $ cd my-profile
 
-# Open in Live Server or VS Code# MyProfile-
+# Open in Live Server or VS Code
